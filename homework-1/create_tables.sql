@@ -18,8 +18,8 @@ CREATE TABLE customers
 CREATE TABLE orders
 (
 	order_id varchar(50) PRIMARY KEY NOT NULL,
-	customer_id varchar(50) NOT NULL,
-	employee_id varchar(50) NOT NULL,
+	customer_id varchar(50) REFERENCES customers(customer_id) NOT NULL,
+	employee_id varchar(50) REFERENCES employees(employee_id) NOT NULL,
 	order_date varchar(50) NOT NULL,
 	ship_city varchar(50) NOT NULL
 );
